@@ -1,8 +1,12 @@
-# HateMemesDetection
+# Hateful Memes Detection
 
-Competition github link: https://github.com/VictorCallejas/FB_MMHM
+### Competition Resources:
 
-Data Preparation: https://github.com/facebookresearch/mmf/blob/master/projects/hateful_memes/README.md#prerequisites
+- [Competition page](https://hatefulmemeschallenge.com/)
+- Competition [github](https://github.com/VictorCallejas/FB_MMHM)
+- Data Preparation [link](https://github.com/facebookresearch/mmf/blob/master/projects/hateful_memes/README.md#prerequisites)
+- Dataset [paper](https://arxiv.org/abs/2005.04790)
+
 
 ### Prerequisite: 
 - install [MMF](https://mmf.sh/docs)
@@ -31,4 +35,9 @@ mmf_run config=projects/hateful_memes/configs/mmbt/defaults.yaml \
   training.batch_size=16 \
   training.evaluation_interval=500
 ```
+- Baseline Models Results in the paper:
+![img_2.png](img_2.png)
+- Hyperparameters:
+![img_3.png](img_3.png)
+
 
