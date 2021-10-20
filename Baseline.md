@@ -165,3 +165,43 @@ val/hateful_memes/cross_entropy: 1.2431, val/total_loss: 1.2431, val/hateful_mem
 
 test/hateful_memes/cross_entropy: 1.0653, test/total_loss: 1.0653, test/hateful_memes/accuracy: 0.7015, test/hateful_memes/binary_f1: 0.5530, test/hateful_memes/roc_auc: 0.7286
 ```
+
+#### **ViLBERT CC**
+
+```latex
+mmf_run config=projects/hateful_memes/configs/vilbert/from_cc.yaml model=vilbert dataset=hateful_memes run_type=val checkpoint.resume_zoo=vilbert.finetuned.hateful_memes.from_cc_original checkpoint.resume_pretrained=False
+
+mmf_run config=projects/hateful_memes/configs/vilbert/from_cc.yaml model=vilbert dataset=hateful_memes run_type=test checkpoint.resume_zoo=vilbert.finetuned.hateful_memes.from_cc_original checkpoint.resume_pretrained=False
+
+mmf_predict config=projects/hateful_memes/configs/vilbert/from_cc.yaml model=vilbert dataset=hateful_memes \
+run_type=test checkpoint.resume_zoo=vilbert.finetuned.hateful_memes.from_cc_original checkpoint.resume_pretrained=False
+```
+- Result
+```latex
+val/hateful_memes/cross_entropy: 3.1337, val/total_loss: 3.1337, val/hateful_memes/accuracy: 0.6796, val/hateful_memes/binary_f1: 0.3870, val/hateful_memes/roc_auc: 0.6561
+
+test/hateful_memes/cross_entropy: 2.6432, test/total_loss: 2.6432, test/hateful_memes/accuracy: 0.7000, test/hateful_memes/binary_f1: 0.5072, test/hateful_memes/roc_auc: 0.7231
+```
+
+#### **VisualBERT COCO**
+
+```latex
+mmf_run config=projects/hateful_memes/configs/visual_bert/from_coco.yaml \
+model=visual_bert dataset=hateful_memes run_type=val \
+checkpoint.resume_zoo=visual_bert.finetuned.hateful_memes.from_coco	 \
+checkpoint.resume_pretrained=False
+
+mmf_run config=projects/hateful_memes/configs/visual_bert/from_coco.yaml \
+model=visual_bert dataset=hateful_memes run_type=test \
+checkpoint.resume_zoo=visual_bert.finetuned.hateful_memes.from_coco	 \
+checkpoint.resume_pretrained=False
+
+mmf_predict config=projects/hateful_memes/configs/visual_bert/from_coco.yaml model=visual_bert dataset=hateful_memes \
+run_type=test checkpoint.resume_zoo=visual_bert.finetuned.hateful_memes.from_coco checkpoint.resume_pretrained=False
+```
+- Result
+```latex
+val/hateful_memes/cross_entropy: 1.4743, val/total_loss: 1.4743, val/hateful_memes/accuracy: 0.6704, val/hateful_memes/binary_f1: 0.4139, val/hateful_memes/roc_auc: 0.6946
+
+test/hateful_memes/cross_entropy: 1.2655, test/total_loss: 1.2655, test/hateful_memes/accuracy: 0.7065, test/hateful_memes/binary_f1: 0.5627, test/hateful_memes/roc_auc: 0.7437
+```
