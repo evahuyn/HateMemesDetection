@@ -3,7 +3,7 @@
 ### Competition Resources:
 
 - [Competition page](https://hatefulmemeschallenge.com/)
-- Competition [github](https://github.com/VictorCallejas/FB_MMHM)
+- Data Preprocessing [link](https://github.com/HimariO/HatefulMemesChallenge/tree/main/data_utils)
 - Data Preparation [link](https://github.com/facebookresearch/mmf/blob/master/projects/hateful_memes/README.md#prerequisites)
 - Dataset [paper](https://arxiv.org/abs/2005.04790)
 
@@ -26,6 +26,9 @@ This can take A WHILE
 
 Use MMF to train an existing baselines. You can adjust the batch size, maximum number of updates, log and evaluation interval as well as other things. Read more about [MMF's configuration system](https://mmf.sh/docs/notes/configuration/).
 
+
+
+#### Train the model
 ```commandline
 mmf_run config=projects/hateful_memes/configs/mmbt/defaults.yaml \
   model=mmbt \
