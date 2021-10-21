@@ -2,3 +2,4 @@ requirements.txt
 data/
 pretrain_model
 result/
+test/
