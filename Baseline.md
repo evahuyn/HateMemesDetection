@@ -105,25 +105,6 @@ val/hateful_memes/cross_entropy: 0.9383, val/total_loss: 0.9383, val/hateful_mem
 test/hateful_memes/cross_entropy: 0.9170, test/total_loss: 0.9170, test/hateful_memes/accuracy: 0.6935, test/hateful_memes/binary_f1: 0.4210, test/hateful_memes/roc_auc: 0.7149
 ```
 
-#### **ConcatBERT**
-
-```latex
-mmf_run config=projects/hateful_memes/configs/concat_bert/defaults.yaml model=concat_bert dataset=hateful_memes \
-run_type=val checkpoint.resume_zoo=concat_bert.hateful_memes checkpoint.resume_pretrained=False
-
-mmf_run config=projects/hateful_memes/configs/concat_bert/defaults.yaml model=concat_bert dataset=hateful_memes \
-run_type=test checkpoint.resume_zoo=concat_bert.hateful_memes checkpoint.resume_pretrained=False
-
-mmf_predict config=projects/hateful_memes/configs/concat_bert/defaults.yaml model=concat_bert dataset=hateful_memes \
-run_type=test checkpoint.resume_zoo=concat_bert.hateful_memes checkpoint.resume_pretrained=False
-```
-- Result
-```latex
-val/hateful_memes/cross_entropy: 1.3524, val/total_loss: 1.3524, val/hateful_memes/accuracy: 0.6648, val/hateful_memes/binary_f1: 0.3903, val/hateful_memes/roc_auc: 0.6783
-
-test/hateful_memes/cross_entropy: 1.3248, test/total_loss: 1.3248, test/hateful_memes/accuracy: 0.6665, test/hateful_memes/binary_f1: 0.4220, test/hateful_memes/roc_auc: 0.6845
-```
-
 #### **ViLBERT**
 
 Note: For this one the pretrained model is somehow not working, I retrained the model use their hyperparameter and get the result
