@@ -40,7 +40,17 @@ mmf_run config=projects/hateful_memes/configs/mmbt/defaults.yaml \
 ```
 - Baseline Models Results in the paper:
 ![img_2.png](img_2.png)
-- Hyperparameters:
+Note: The detailed Baseline Model Result reproduced by me is in Baseline.md file.
+
+- Hyperparameters in the original paper:
 ![img_3.png](img_3.png)
 
+
+## Ensemble Learning
+
+I applied ensemble learning with Majority Vote and Mean Probability. The code is in ensemble.py file. Run the following to get the ensemble learning result.
+
+```commandline
+python ensemble.py
+```
 

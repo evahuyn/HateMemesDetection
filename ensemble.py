@@ -96,6 +96,6 @@ def evaluation_metrics():
     print(f'Probability average f1: {f1_score2}')
 
 
-# ensemble(models, modelnames)
+ensemble(models, modelnames)
 evaluation_metrics()
 
