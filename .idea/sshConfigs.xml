@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="nlp6.cs.unc.edu" id="2786ced4-0488-48cc-97a2-1f4b4e213ceb" port="22" nameFormat="DESCRIPTIVE" username="huyinuo" />
+    </configs>
+  </component>
+</project>

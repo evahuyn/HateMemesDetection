@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7225cdea-fd62-4e14-8a24-c0e2bc707a23" name="nlp6">
+        <fileTransfer rootFolder="/ssd-playpen/home/yinuo" accessType="SFTP" host="nlp6.cs.unc.edu" port="22" sshConfigId="2786ced4-0488-48cc-97a2-1f4b4e213ceb" sshConfig="huyinuo@nlp6.cs.unc.edu:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
