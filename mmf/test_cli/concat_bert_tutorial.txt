@@ -1,0 +1,1 @@
+mmf_run config="configs/experiments/concat_bert_tutorial/defaults.yaml" model=concat_bert_tutorial dataset=hateful_memes run_type=test checkpoint.resume_file=./save/concat_bert_tutorial_final.pth checkpoint.resume_pretrained=False

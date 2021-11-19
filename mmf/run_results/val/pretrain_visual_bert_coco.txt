@@ -1,0 +1,423 @@
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/resolvers/__init__.py:12: UserWarning: The `env` resolver is deprecated, see https://github.com/omry/omegaconf/issues/573
+  warnings.warn(
+2021-11-18T20:28:22 | mmf.utils.configuration: Overriding option config to projects/hateful_memes/configs/visual_bert/from_coco.yaml
+2021-11-18T20:28:22 | mmf.utils.configuration: Overriding option model to visual_bert
+2021-11-18T20:28:22 | mmf.utils.configuration: Overriding option datasets to hateful_memes
+2021-11-18T20:28:22 | mmf.utils.configuration: Overriding option run_type to val
+2021-11-18T20:28:22 | mmf.utils.configuration: Overriding option checkpoint.resume_zoo to visual_bert.finetuned.hateful_memes.from_coco
+2021-11-18T20:28:22 | mmf.utils.configuration: Overriding option checkpoint.resume_pretrained to False
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_LOG_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_REPORT_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_TENSORBOARD_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_WANDB_LOGDIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2021-11-18T20:28:26 | mmf.utils.distributed: XLA Mode:False
+2021-11-18T20:28:26 | mmf.utils.distributed: Distributed Init (Rank 0): tcp://localhost:19281
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2021-11-18T20:28:26 | mmf.utils.distributed: XLA Mode:False
+2021-11-18T20:28:26 | mmf.utils.distributed: Distributed Init (Rank 3): tcp://localhost:19281
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+/ssd-playpen/home/yinuo/test/lib/python3.8/site-packages/omegaconf/grammar_visitor.py:253: UserWarning: In the sequence `MMF_USER_DIR,` some elements are missing: please replace them with empty quoted strings. See https://github.com/omry/omegaconf/issues/572 for details.
+  warnings.warn(
+2021-11-18T20:28:26 | mmf.utils.distributed: XLA Mode:False
+2021-11-18T20:28:26 | mmf.utils.distributed: Distributed Init (Rank 1): tcp://localhost:19281
+2021-11-18T20:28:26 | mmf.utils.distributed: XLA Mode:False
+2021-11-18T20:28:26 | mmf.utils.distributed: Distributed Init (Rank 2): tcp://localhost:19281
+2021-11-18T20:28:30 | mmf.utils.distributed: Initialized Host nlp6.cs.unc.edu as Rank 1
+2021-11-18T20:28:30 | mmf.utils.distributed: Initialized Host nlp6.cs.unc.edu as Rank 2
+2021-11-18T20:28:30 | mmf.utils.distributed: Initialized Host nlp6.cs.unc.edu as Rank 0
+2021-11-18T20:28:30 | mmf.utils.distributed: Initialized Host nlp6.cs.unc.edu as Rank 3
+2021-11-18T20:28:30 | mmf: Logging to: ./save/train.log
+2021-11-18T20:28:30 | mmf_cli.run: Namespace(config_override=None, local_rank=None, opts=['config=projects/hateful_memes/configs/visual_bert/from_coco.yaml', 'model=visual_bert', 'dataset=hateful_memes', 'run_type=val', 'checkpoint.resume_zoo=visual_bert.finetuned.hateful_memes.from_coco', 'checkpoint.resume_pretrained=False\r'])
+2021-11-18T20:28:30 | mmf_cli.run: Torch version: 1.7.1+cu110
+2021-11-18T20:28:30 | mmf.utils.general: CUDA Device 0 is: TITAN V
+2021-11-18T20:28:30 | mmf_cli.run: Using seed 33343014
+2021-11-18T20:28:30 | mmf.trainers.mmf_trainer: Loading datasets
+WARNING 2021-11-18T20:28:31 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: "sox" backend is being deprecated. The default backend will be changed to "sox_io" backend in 0.8.0 and "sox" backend will be removed in 0.9.0. Please migrate to "sox_io" backend. Please refer to https://github.com/pytorch/audio/issues/903 for the detail.
+  builtin_warn(*args, **kwargs)
+
+WARNING 2021-11-18T20:28:31 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: "sox" backend is being deprecated. The default backend will be changed to "sox_io" backend in 0.8.0 and "sox" backend will be removed in 0.9.0. Please migrate to "sox_io" backend. Please refer to https://github.com/pytorch/audio/issues/903 for the detail.
+  builtin_warn(*args, **kwargs)
+
+2021-11-18T20:28:31 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2021-11-18T20:28:31 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2021-11-18T20:28:31 | mmf.datasets.multi_datamodule: Multitasking disabled by default for single dataset training
+2021-11-18T20:28:31 | mmf.trainers.mmf_trainer: Loading model
+Some weights of VisualBERTBase were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['bert.embeddings.token_type_embeddings_visual.weight', 'bert.embeddings.position_embeddings_visual.weight', 'bert.embeddings.projection.weight', 'bert.embeddings.projection.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2021-11-18T20:28:35 | mmf.trainers.mmf_trainer: Loading optimizer
+2021-11-18T20:28:35 | mmf.trainers.mmf_trainer: Loading metrics
+2021-11-18T20:28:35 | mmf.utils.checkpoint: Loading checkpoint
+WARNING 2021-11-18T20:28:35 | mmf: Key data_parallel is not present in registry, returning default value of None
+WARNING 2021-11-18T20:28:35 | mmf: Key distributed is not present in registry, returning default value of None
+WARNING 2021-11-18T20:28:35 | mmf: Key data_parallel is not present in registry, returning default value of None
+WARNING 2021-11-18T20:28:35 | mmf: Key distributed is not present in registry, returning default value of None
+WARNING 2021-11-18T20:28:36 | mmf.utils.checkpoint: Missing keys ['model.bert.embeddings.position_ids'] in the checkpoint.
+If this is not your checkpoint, please open up an issue on MMF GitHub.
+Unexpected keys if any: []
+WARNING 2021-11-18T20:28:36 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: 'optimizer' key is not present in the checkpoint asked to be loaded. Skipping.
+  builtin_warn(*args, **kwargs)
+
+WARNING 2021-11-18T20:28:36 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: 'optimizer' key is not present in the checkpoint asked to be loaded. Skipping.
+  builtin_warn(*args, **kwargs)
+
+WARNING 2021-11-18T20:28:36 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: 'lr_scheduler' key is not present in the checkpoint asked to be loaded. Setting lr_scheduler's last_epoch to current_iteration.
+  builtin_warn(*args, **kwargs)
+
+WARNING 2021-11-18T20:28:36 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: 'lr_scheduler' key is not present in the checkpoint asked to be loaded. Setting lr_scheduler's last_epoch to current_iteration.
+  builtin_warn(*args, **kwargs)
+
+2021-11-18T20:28:36 | mmf.utils.checkpoint: Checkpoint loaded.
+2021-11-18T20:28:36 | mmf.utils.checkpoint: Current num updates: 0
+2021-11-18T20:28:36 | mmf.utils.checkpoint: Current iteration: 0
+2021-11-18T20:28:36 | mmf.utils.checkpoint: Current epoch: 0
+2021-11-18T20:28:36 | mmf.trainers.core.device: Using PyTorch DistributedDataParallel
+WARNING 2021-11-18T20:28:36 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: You can enable ZeRO and Sharded DDP, by installing fairscale and setting optimizer.enable_state_sharding=True.
+  builtin_warn(*args, **kwargs)
+
+WARNING 2021-11-18T20:28:36 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/mmf/mmf/utils/distributed.py:408: UserWarning: You can enable ZeRO and Sharded DDP, by installing fairscale and setting optimizer.enable_state_sharding=True.
+  builtin_warn(*args, **kwargs)
+
+Some weights of VisualBERTBase were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['bert.embeddings.token_type_embeddings_visual.weight', 'bert.embeddings.position_embeddings_visual.weight', 'bert.embeddings.projection.weight', 'bert.embeddings.projection.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of VisualBERTBase were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['bert.embeddings.token_type_embeddings_visual.weight', 'bert.embeddings.position_embeddings_visual.weight', 'bert.embeddings.projection.weight', 'bert.embeddings.projection.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Some weights of VisualBERTBase were not initialized from the model checkpoint at bert-base-uncased and are newly initialized: ['bert.embeddings.token_type_embeddings_visual.weight', 'bert.embeddings.position_embeddings_visual.weight', 'bert.embeddings.projection.weight', 'bert.embeddings.projection.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+2021-11-18T20:28:40 | mmf.trainers.mmf_trainer: ===== Model =====
+2021-11-18T20:28:40 | mmf.trainers.mmf_trainer: DistributedDataParallel(
+  (module): VisualBERT(
+    (model): VisualBERTForClassification(
+      (bert): VisualBERTBase(
+        (embeddings): BertVisioLinguisticEmbeddings(
+          (word_embeddings): Embedding(30522, 768, padding_idx=0)
+          (position_embeddings): Embedding(512, 768)
+          (token_type_embeddings): Embedding(2, 768)
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+          (dropout): Dropout(p=0.1, inplace=False)
+          (token_type_embeddings_visual): Embedding(2, 768)
+          (position_embeddings_visual): Embedding(512, 768)
+          (projection): Linear(in_features=2048, out_features=768, bias=True)
+        )
+        (encoder): BertEncoderJit(
+          (layer): ModuleList(
+            (0): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (1): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (2): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (3): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (4): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (5): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (6): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (7): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (8): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (9): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (10): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+            (11): BertLayerJit(
+              (attention): BertAttentionJit(
+                (self): BertSelfAttentionJit(
+                  (query): Linear(in_features=768, out_features=768, bias=True)
+                  (key): Linear(in_features=768, out_features=768, bias=True)
+                  (value): Linear(in_features=768, out_features=768, bias=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+                (output): BertSelfOutput(
+                  (dense): Linear(in_features=768, out_features=768, bias=True)
+                  (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                  (dropout): Dropout(p=0.1, inplace=False)
+                )
+              )
+              (intermediate): BertIntermediate(
+                (dense): Linear(in_features=768, out_features=3072, bias=True)
+              )
+              (output): BertOutput(
+                (dense): Linear(in_features=3072, out_features=768, bias=True)
+                (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+                (dropout): Dropout(p=0.1, inplace=False)
+              )
+            )
+          )
+        )
+        (pooler): BertPooler(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (activation): Tanh()
+        )
+      )
+      (dropout): Dropout(p=0.1, inplace=False)
+      (classifier): Sequential(
+        (0): BertPredictionHeadTransform(
+          (dense): Linear(in_features=768, out_features=768, bias=True)
+          (LayerNorm): LayerNorm((768,), eps=1e-12, elementwise_affine=True)
+        )
+        (1): Linear(in_features=768, out_features=2, bias=True)
+      )
+    )
+    (losses): Losses(
+      (losses): ModuleList(
+        (0): MMFLoss(
+          (loss_criterion): CrossEntropyLoss(
+            (loss_fn): CrossEntropyLoss()
+          )
+        )
+      )
+    )
+  )
+)
+2021-11-18T20:28:40 | mmf.utils.general: Total Parameters: 112044290. Trained Parameters: 112044290
+2021-11-18T20:28:40 | mmf.trainers.mmf_trainer: Starting inference on val set
+2021-11-18T20:28:40 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|█████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:15<00:00,  1.74s/it]
+2021-11-18T20:28:55 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 9
+2021-11-18T20:28:55 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-18T20:28:56 | mmf.trainers.callbacks.logistics: val/hateful_memes/cross_entropy: 1.4743, val/total_loss: 1.4743, val/hateful_memes/accuracy: 0.6704, val/hateful_memes/binary_f1: 0.4139, val/hateful_memes/roc_auc: 0.6946
+2021-11-18T20:28:56 | mmf.trainers.callbacks.logistics: Finished run in 20s 580ms

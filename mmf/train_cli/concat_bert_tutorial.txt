@@ -1,0 +1,4 @@
+mmf_run config="configs/experiments/concat_bert_tutorial/defaults.yaml" \
+    model=concat_bert_tutorial \
+    dataset=hateful_memes \
+    run_type=train_val

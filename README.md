@@ -22,6 +22,16 @@ mmf_convert_hm --zip_file=x --password=y --bypass_checksum=1
 ```
 This can take A WHILE
 
+The zip file will be converted into correct format and lives in .cache/torch/mmf/data/datasets/hateful_memes/defaults
+
+To replace the annotation with needed one, add flags 
+
+```commandline
+  dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/train.jsonl" \
+  dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dev_unseen.jsonl" \
+  dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/test_unseen.jsonl"
+```
+
 ### Reproducing Baselines:
 
 Use MMF to train an existing baselines. You can adjust the batch size, maximum number of updates, log and evaluation interval as well as other things. Read more about [MMF's configuration system](https://mmf.sh/docs/notes/configuration/).
@@ -53,4 +63,23 @@ I applied ensemble learning with Majority Vote and Mean Probability. The code is
 ```commandline
 python ensemble.py
 ```
+
+## Generate Image Captioning for the Memes
+
+### Show and Tell : A Neural Image Caption Generator
+Pretrained model for Tensorflow implementation found at tensorflow/models of the image-to-text paper described at:
+
+"Show and Tell: Lessons learned from the 2015 MSCOCO Image Captioning Challenge." - Oriol Vinyals, Alexander Toshev, Samy Bengio, Dumitru Erhan.
+
+Link to the Pretrain model [inceptionv3 finetuned parameters over 1M](https://drive.google.com/file/d/1r4-9FEIbOUyBSvA-fFVFgvhFpgee6sF5/view)
+
+Full text of the original [paper](http://arxiv.org/abs/1609.06647) 
+
+### Generate captions for all images in the dataset
+
+Check this [repo](https://github.com/evahuyn/ImageCaptioning)
+
+### Combine Image Caption with the text input
+
+The image caption and text caption is concatenate as the textual inputs. 
 
