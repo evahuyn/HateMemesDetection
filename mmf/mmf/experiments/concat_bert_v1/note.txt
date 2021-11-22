@@ -1,0 +1,19 @@
+# put concat_bert_v1.py under /mmf/models folder
+
+# train model
+mmf_run config="experiments/concat_bert_v1/experiment_defaults.yaml" model=concat_bert_v1 dataset=hateful_memes run_type=train_val env.save_dir="./save/concat_bert_v1"
+
+# test model
+mmf_run config="experiments/concat_bert_v1/experiment_defaults.yaml" model=concat_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/concat_bert_v1/concat_bert_v1_final.pth checkpoint.resume_pretrained=False
+
+# test with caption
+mmf_run config="experiments/concat_bert_v1/experiment_defaults.yaml" model=concat_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/concat_bert_v1/concat_bert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.test[0]=hateful_memes/defaults/annotations/caption_test_unseen.jsonl
+
+# train with caption
+mmf_run config="experiments/concat_bert_v1/experiment_defaults.yaml" model=concat_bert_v1 dataset=hateful_memes run_type=train_val env.save_dir="./save/concat_bert_v1" dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl"
+
+# test on non-caption
+mmf_run config="experiments/concat_bert_v1/experiment_defaults.yaml" model=concat_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/concat_bert_v1_caption/concat_bert_v1_final.pth checkpoint.resume_pretrained=False
+
+# test with caption
+mmf_run config="experiments/concat_bert_v1/experiment_defaults.yaml" model=concat_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/concat_bert_v1_caption/concat_bert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.test[0]=hateful_memes/defaults/annotations/caption_test_unseen.jsonl

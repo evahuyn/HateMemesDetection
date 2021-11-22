@@ -1,0 +1,1 @@
+mmf_run config="concat_bert_v1/experiment_defaults.yaml" model=concat_bert_v1 dataset=hateful_memes run_type=train_val env.save_dir="./save/concat_bert_v1"

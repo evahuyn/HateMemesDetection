@@ -1182,3 +1182,9 @@ WARNING 2021-11-18T22:28:01 | py.warnings: /ssd-playpen/home/yinuo/hatef_memes/m
 2021-11-18T22:28:23 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
 2021-11-18T22:28:24 | mmf.trainers.callbacks.logistics: progress: 2500/11000, test/hateful_memes/cross_entropy: 0.9018, test/total_loss: 0.9018, test/hateful_memes/accuracy: 0.6875, test/hateful_memes/binary_f1: 0.4321, test/hateful_memes/roc_auc: 0.7169
 2021-11-18T22:28:24 | mmf.trainers.callbacks.logistics: Finished run in 55m 09s 377ms
+
+
+without caption
+test/hateful_memes/cross_entropy: 0.9324, test/total_loss: 0.9324, test/hateful_memes/accuracy: 0.6855, test/hateful_memes/binary_f1: 0.4124, test/hateful_memes/roc_auc: 0.7057
+with caption
+

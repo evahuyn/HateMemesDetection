@@ -1,0 +1,48 @@
+2021-11-21T16:50:03 | mmf.utils.checkpoint: Checkpoint loaded.
+2021-11-21T16:50:03 | mmf.utils.checkpoint: Current num updates: 2000
+2021-11-21T16:50:03 | mmf.utils.checkpoint: Current iteration: 2000
+2021-11-21T16:50:03 | mmf.utils.checkpoint: Current epoch: 16
+2021-11-21T16:50:05 | mmf.trainers.mmf_trainer: Starting inference on val set
+2021-11-21T16:50:05 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|█████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:16<00:00,  1.85s/it]
+2021-11-21T16:50:21 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 9
+2021-11-21T16:50:21 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-21T16:50:21 | mmf.trainers.callbacks.logistics: progress: 2000/3000, val/hateful_memes/cross_entropy: 1.5713, val/total_loss: 1.5713, val/hateful_memes/accuracy: 0.6500, val/hateful_memes/binary_f1: 0.3315, val/hateful_memes/roc_auc: 0.6117
+2021-11-21T16:50:21 | mmf.trainers.callbacks.logistics: Finished run in 37m 37s 911ms
+
+Trained without caption, test without caption
+2021-11-21T17:08:32 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 1.5279, test/total_loss: 1.5279, test/hateful_memes/accuracy: 0.6540, test/hateful_memes/binary_f1: 0.3772, test/hateful_memes/roc_auc: 0.6455
+
+Trained without caption, test with caption
+2021-11-21T17:34:42 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 1.5732, test/total_loss: 1.5732, test/hateful_memes/accuracy: 0.6485, test/hateful_memes/binary_f1: 0.3601, test/hateful_memes/roc_auc: 0.6382
+
+Trained with caption
+2021-11-21T18:14:50 | mmf.utils.checkpoint: Checkpoint loaded.
+2021-11-21T18:14:50 | mmf.utils.checkpoint: Current num updates: 3000
+2021-11-21T18:14:50 | mmf.utils.checkpoint: Current iteration: 3000
+2021-11-21T18:14:50 | mmf.utils.checkpoint: Current epoch: 23
+2021-11-21T18:14:51 | mmf.trainers.mmf_trainer: Starting inference on val set
+2021-11-21T18:14:51 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|█████████████████████████████████████████████████████████████████████████████████████| 9/9 [00:16<00:00,  1.83s/it]
+2021-11-21T18:15:08 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 9
+2021-11-21T18:15:08 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-21T18:15:08 | mmf.trainers.callbacks.logistics: progress: 3000/3000, val/hateful_memes/cross_entropy: 1.5907, val/total_loss: 1.5907, val/hateful_memes/accuracy: 0.6481, val/hateful_memes/binary_f1: 0.3827, val/hateful_memes/roc_auc: 0.6164
+2021-11-21T18:15:08 | mmf.trainers.callbacks.logistics: Finished run in 37m 12s 528ms
+
+Trained with caption + Test without caption
+2021-11-21T20:07:30 | mmf.utils.general: Total Parameters: 170384706. Trained Parameters: 170384706
+2021-11-21T20:07:30 | mmf.trainers.mmf_trainer: Starting inference on test set
+2021-11-21T20:07:30 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 32/32 [00:19<00:00,  1.65it/s]
+2021-11-21T20:07:50 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 32
+2021-11-21T20:07:50 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-21T20:07:50 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 1.5385, test/total_loss: 1.5385, test/hateful_memes/accuracy: 0.6560, test/hateful_memes/binary_f1: 0.3941, test/hateful_memes/roc_auc: 0.6550
+
+Trained with caption + Test with caption
+2021-11-21T20:13:38 | mmf.utils.general: Total Parameters: 170384706. Trained Parameters: 170384706
+2021-11-21T20:13:38 | mmf.trainers.mmf_trainer: Starting inference on test set
+2021-11-21T20:13:38 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 32/32 [00:19<00:00,  1.62it/s]
+2021-11-21T20:13:58 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 32
+2021-11-21T20:13:58 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-21T20:13:58 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 1.3895, test/total_loss: 1.3895, test/hateful_memes/accuracy: 0.6840, test/hateful_memes/binary_f1: 0.4797, test/hateful_memes/roc_auc: 0.6929
