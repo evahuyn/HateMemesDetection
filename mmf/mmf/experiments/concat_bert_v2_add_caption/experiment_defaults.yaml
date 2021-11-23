@@ -2,7 +2,7 @@ includes:
   - configs/datasets/hateful_memes/bert.yaml
 
 model_config:
-  concat_bert_v1:
+  concat_bert_v2_add_caption:
     classifier:
       type: mlp
       params:

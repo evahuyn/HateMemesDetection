@@ -1,0 +1,6 @@
+includes:
+- ./experiment_defaults.yaml
+
+checkpoint:
+  resume_pretrained: true
+  resume_zoo: vilbert.pretrained.cc.original

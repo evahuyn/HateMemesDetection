@@ -12,6 +12,7 @@ from mmf.utils.visualize import visualize_images
 from PIL import Image
 from torchvision import transforms
 
+# original version
 # put file in mmf/mmf/datasets/builders/hateful_memes/dataset.py
 
 class HatefulMemesFeaturesDataset(MMFDataset):
@@ -115,12 +116,8 @@ class HatefulMemesImageDataset(MMFDataset):
         sample_info = self.annotation_db[idx]
         current_sample = Sample()
 
-        processed_text = self.text_processor({"text": sample_info["text_a"]})
-        # print(processed_text)
-        # add processed caption and concat
-        processed_caption = self.text_processor({"caption": sample_info["caption"]})
-        current_sample.text = processed_text["text"] + processed_caption["caption"]
-        print("concat text caption" + current_sample.text)
+        processed_text = self.text_processor({"text": sample_info["text"]})
+        current_sample.text = processed_text["text"]
         if "input_ids" in processed_text:
             current_sample.update(processed_text)
 

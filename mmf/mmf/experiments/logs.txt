@@ -1,0 +1,10 @@
+Data
+caption_added_v1 - concat caption with text field use [SEP]
+caption_added_v2 - text in text_a, caption in text_b
+caption_augment - double the size of the data,
+
+Trained model
+concat_bert_v1 - original concat model, trained with original data
+concat_bert_v2_add_caption - trained with caption added
+vilbert_v1 - trained with caption added
+visual_bert_v1 - trained with caption added
