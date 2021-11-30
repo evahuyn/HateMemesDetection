@@ -7,5 +7,25 @@ mmf_run config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_
 # test with caption
 mmf_run config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/visual_bert_v1/visual_bert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl"
 
+# predict
+mmf_predict config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/visual_bert_v1/visual_bert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl"
+
 # train with augmented caption
 mmf_run config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=train_val dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added_v3/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added_v3/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added_v3/caption_test_unseen.jsonl" env.save_dir="./save/visual_bert_v1_augmented"
+
+# Findtuning on pretrained COCO
+mmf_run config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=train_val checkpoint.resume_file=./save/visual_bert.pretrained.coco/model.pth checkpoint.resume_pretrained=True dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl" env.save_dir="./save/visual_bert_coco"
+
+# test
+mmf_run config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/visual_bert_coco/visual_bert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl"
+
+# predict
+mmf_predict config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/visual_bert_coco/visual_bert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl"
+
+# Finetuning on pretrained COCO without caption
+mmf_run config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=train_val checkpoint.resume_file=./save/visual_bert.pretrained.coco/model.pth checkpoint.resume_pretrained=True env.save_dir="./save/visual_bert_coco_without"
+
+# test
+mmf_run config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/visual_bert_coco_without/visual_bert_v1_final.pth checkpoint.resume_pretrained=False
+
+mmf_predict config=experiments/visual_bert_v1/experiment_defaults.yaml model=visual_bert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/visual_bert_coco_without/visual_bert_v1_final.pth checkpoint.resume_pretrained=False

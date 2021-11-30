@@ -1,1 +1,1 @@
-mmf_run config=experiments/vilbert_v1/experiment_from_cc.yaml model=vilbert_v1 dataset=hateful_memes run_type=val checkpoint.resume_zoo=vilbert.finetuned.hateful_memes.from_cc_original checkpoint.resume_pretrained=False
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=train_val checkpoint.resume_file=./save/vilbert.pretrained.cc.original/model.pth checkpoint.resume_pretrained=True env.save_dir="./save/vilbert_cc_without"

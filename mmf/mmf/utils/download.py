@@ -300,6 +300,8 @@ def download(url, path, fname, redownload=True, disable_tqdm=False):
                 + url
                 + ". There may be a download problem."
             )
+        print("Resume file is: " + resume_file)
+        print("Outfile is: "+ outfile)
         move(resume_file, outfile)
 
     if pbar:

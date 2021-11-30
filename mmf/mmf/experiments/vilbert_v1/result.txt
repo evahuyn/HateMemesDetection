@@ -29,4 +29,55 @@
 2021-11-22T12:43:41 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
 2021-11-22T12:43:41 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 1.5797, test/total_loss: 1.5797, test/hateful_memes/accuracy: 0.6920, test/hateful_memes/binary_f1: 0.6283, test/hateful_memes/roc_auc: 0.7637
 
-# test without caption
+# use pretrained cc  with caption
+2021-11-28T16:01:06 | INFO | mmf.utils.checkpoint : Checkpoint loaded.
+2021-11-28T16:01:06 | INFO | mmf.utils.checkpoint : Current num updates: 11000
+2021-11-28T16:01:06 | INFO | mmf.utils.checkpoint : Current iteration: 11000
+2021-11-28T16:01:06 | INFO | mmf.utils.checkpoint : Current epoch: 42
+2021-11-28T16:01:08 | INFO | mmf.trainers.mmf_trainer : Starting inference on val set
+2021-11-28T16:01:08 | INFO | mmf.common.test_reporter : Predicting for hateful_memes
+2021-11-28T16:01:25 | INFO | mmf.trainers.core.evaluation_loop : Finished training. Loaded 17
+2021-11-28T16:01:25 | INFO | mmf.trainers.core.evaluation_loop :  -- skipped 0 batches.
+2021-11-28T16:01:25 | INFO | mmf.trainers.callbacks.logistics : progress: 11000/11000, val/hateful_memes/cross_entropy: 2.2493, val/total_loss: 2.2493, val/hateful_memes/accuracy: 0.6944, val/hateful_memes/binary_f1: 0.4637, val/hateful_memes/roc_auc: 0.7107
+
+2021-11-28T16:12:28 | mmf.utils.general: Total Parameters: 247780354. Trained Parameters: 247780354
+2021-11-28T16:12:28 | mmf.trainers.mmf_trainer: Starting inference on test set
+2021-11-28T16:12:28 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 63/63 [00:23<00:00,  2.73it/s]
+2021-11-28T16:12:51 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 63
+2021-11-28T16:12:51 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-28T16:12:51 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 2.1480, test/total_loss: 2.1480, test/hateful_memes/accuracy: 0.7110, test/hateful_memes/binary_f1: 0.4958, test/hateful_memes/roc_auc: 0.7481
+
+# pretrained cc without caption
+2021-11-28T18:13:07 | mmf.utils.checkpoint: Checkpoint loaded.
+2021-11-28T18:13:07 | mmf.utils.checkpoint: Current num updates: 11000
+2021-11-28T18:13:07 | mmf.utils.checkpoint: Current iteration: 11000
+2021-11-28T18:13:07 | mmf.utils.checkpoint: Current epoch: 42
+2021-11-28T18:13:09 | mmf.trainers.mmf_trainer: Starting inference on val set
+2021-11-28T18:13:09 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 17/17 [00:16<00:00,  1.01it/s]
+2021-11-28T18:13:26 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 17
+2021-11-28T18:13:26 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-28T18:13:26 | mmf.trainers.callbacks.logistics: progress: 11000/11000, val/hateful_memes/cross_entropy: 2.2665, val/total_loss: 2.2665, val/hateful_memes/accuracy: 0.6833, val/hateful_memes/binary_f1: 0.4430, val/hateful_memes/roc_auc: 0.6989
+
+2021-11-28T18:16:19 | mmf.utils.general: Total Parameters: 247780354. Trained Parameters: 247780354
+2021-11-28T18:16:19 | mmf.trainers.mmf_trainer: Starting inference on test set
+2021-11-28T18:16:19 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 63/63 [00:22<00:00,  2.84it/s]
+2021-11-28T18:16:41 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 63
+2021-11-28T18:16:41 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-28T18:16:41 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 2.0905, test/total_loss: 2.0905, test/hateful_memes/accuracy: 0.7040, test/hateful_memes/binary_f1: 0.4896, test/hateful_memes/roc_auc: 0.7449
+
+
+
+## Vilbert Train with default + caption
+2021-11-29T20:41:14 | mmf.utils.checkpoint: Checkpoint loaded.
+2021-11-29T20:41:14 | mmf.utils.checkpoint: Current num updates: 10000
+2021-11-29T20:41:14 | mmf.utils.checkpoint: Current iteration: 10000
+2021-11-29T20:41:14 | mmf.utils.checkpoint: Current epoch: 38
+2021-11-29T20:41:16 | mmf.trainers.mmf_trainer: Starting inference on val set
+2021-11-29T20:41:16 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 17/17 [00:17<00:00,  1.02s/it]
+2021-11-29T20:41:33 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 17
+2021-11-29T20:41:33 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-11-29T20:41:33 | mmf.trainers.callbacks.logistics: progress: 10000/22000, val/hateful_memes/cross_entropy: 2.2731, val/total_loss: 2.2731, val/hateful_memes/accuracy: 0.6926, val/hateful_memes/binary_f1: 0.4875, val/hateful_memes/roc_auc: 0.7068

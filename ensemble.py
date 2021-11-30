@@ -11,12 +11,45 @@ vilbert = pd.read_csv("result/vilbert.csv")
 vilbert_cc = pd.read_csv("result/vilbert_cc.csv")
 visualbert = pd.read_csv("result/visualbert.csv")
 visualbert_coco = pd.read_csv("result/visualbert_coco.csv")
+finetune_visual_bert_with_caption = pd.read_csv("result/fintune_visual_bert_with_caption.csv")
+finetune_visual_bert_without_caption = pd.read_csv("result/fintune_visual_bert_without_caption.csv")
+finetune_visual_bert_coco_with_caption = pd.read_csv("result/fintune_visual_bert_coco_with_caption.csv")
+finetune_visual_bert_coco_without_caption = pd.read_csv("result/fintune_visual_bert_coco_without_caption.csv")
+finetune_vilbert_with_caption = pd.read_csv("result/fintune_vilbert_with_caption.csv")
+vilbert_default_with_caption = pd.read_csv("result/vilbert_default_with_caption.csv")
+finetune_vilbert_without_caption = pd.read_csv("result/fintune_vilbert_without_caption.csv")
+finetune_vilbert_cc_with_caption = pd.read_csv("result/fintune_vilbert_cc_with_caption.csv")
+finetune_vilbert_cc_without_caption = pd.read_csv("result/fintune_vilbert_cc_without_caption.csv")
 
-models = [mmbt_grid, mmbt_region, vilbert, vilbert_cc, visualbert, visualbert_coco]
-modelnames = ["mmbt_grid", "mmbt_region", "vilbery", "vilbert_cc", "visualbert", "visualbert_coco"]
+models = [mmbt_grid, mmbt_region, finetune_vilbert_without_caption, finetune_vilbert_with_caption, finetune_visual_bert_without_caption, finetune_visual_bert_with_caption]
+modelnames = ["mmbt_grid", "mmbt_region", "vilbert", "vilbert_caption", "visualbert", "visualbert_caption"]
 
-models_v2 = [vilbert, vilbert_cc, visualbert, visualbert_coco]
-modelname_v2 = ["vilbery", "vilbert_cc", "visualbert", "visualbert_coco"]
+models_v2 = [finetune_vilbert_without_caption, finetune_vilbert_cc_without_caption, finetune_visual_bert_without_caption, finetune_visual_bert_coco_without_caption]
+modelname_v2 = ["vilbert", "vilbert_cc", "visualbert", "visualbert_coco"]
+
+models_v3 = [finetune_vilbert_cc_with_caption, finetune_vilbert_cc_without_caption, finetune_vilbert_with_caption, finetune_vilbert_without_caption,
+finetune_visual_bert_coco_with_caption,finetune_visual_bert_coco_without_caption, finetune_visual_bert_with_caption, finetune_visual_bert_without_caption]
+modelname_v3 = ["vilbert_cc_caption", "vilbert_cc", "vilbert_caption", "vilbert", "visual_bert_coco_caption", "visual_bert_coco", "visual_bert_caption", "visual_bert"]
+
+models_v4 = [finetune_vilbert_cc_with_caption, finetune_vilbert_with_caption,
+finetune_visual_bert_coco_with_caption, finetune_visual_bert_with_caption]
+modelname_v4 = ["vilbert_cc_caption", "vilbert_caption", "visual_bert_coco_caption", "visual_bert_caption", ]
+
+models_v5 = [finetune_vilbert_cc_with_caption, finetune_vilbert_cc_without_caption,
+finetune_visual_bert_coco_with_caption,finetune_visual_bert_coco_without_caption]
+modelname_v5 = ["vilbert_cc_caption", "vilbert_cc", "visual_bert_coco_caption", "visual_bert_coco"]
+
+models_v6 = [mmbt_grid, mmbt_region, finetune_vilbert_cc_with_caption, finetune_vilbert_cc_without_caption, finetune_vilbert_with_caption, finetune_vilbert_without_caption,
+finetune_visual_bert_coco_with_caption,finetune_visual_bert_coco_without_caption, finetune_visual_bert_with_caption, finetune_visual_bert_without_caption]
+modelname_v6 = ["mmbt_grid", "mmbt_region","vilbert_cc_caption", "vilbert_cc", "vilbert_caption", "vilbert", "visual_bert_coco_caption", "visual_bert_coco", "visual_bert_caption", "visual_bert"]
+
+models_v7 = [mmbt_grid, mmbt_region, finetune_vilbert_cc_with_caption, finetune_vilbert_with_caption,
+finetune_visual_bert_coco_with_caption, finetune_visual_bert_with_caption]
+modelname_v7 = ["mmbt_grid", "mmbt_region","vilbert_cc_caption", "vilbert_caption",  "visual_bert_coco_caption", "visual_bert_caption"]
+
+models_v8 = [finetune_vilbert_cc_with_caption, finetune_vilbert_cc_without_caption, finetune_vilbert_with_caption,
+finetune_visual_bert_coco_with_caption,finetune_visual_bert_coco_without_caption, finetune_visual_bert_with_caption]
+modelname_v8 = ["vilbert_cc_caption", "vilbert_cc", "vilbert_caption", "visual_bert_coco_caption", "visual_bert_coco", "visual_bert_caption"]
 
 def ensemble(models, modelnames):
     # print([len(df) for df in models])
@@ -96,6 +129,6 @@ def evaluation_metrics():
     print(f'Probability average f1: {f1_score2}')
 
 
-ensemble(models, modelnames)
+ensemble(models_v5, modelname_v5)
 evaluation_metrics()
 

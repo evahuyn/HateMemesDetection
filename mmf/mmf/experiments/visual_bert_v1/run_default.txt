@@ -1,0 +1,8 @@
+mmf_run config=projects/hateful_memes/configs/visual_bert/direct.yaml model=visual_bert dataset=hateful_memes \
+run_type=test checkpoint.resume_file=./save/visual_bert_final.pth checkpoint.resume_pretrained=False
+
+mmf_run config=projects/hateful_memes/configs/visual_bert/direct.yaml model=visual_bert dataset=hateful_memes \
+run_type=val checkpoint.resume_file=./save/visual_bert_final.pth checkpoint.resume_pretrained=False
+
+mmf_run config=projects/hateful_memes/configs/visual_bert/direct.yaml model=visual_bert dataset=hateful_memes \
+run_type=test checkpoint.resume_file=./save/visual_bert_final.pth checkpoint.resume_pretrained=False

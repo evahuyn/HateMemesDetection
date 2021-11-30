@@ -1,0 +1,2 @@
+mmf_run config=projects/hateful_memes/configs/vilbert/defaults.yaml model=vilbert dataset=hateful_memes \
+run_type=test checkpoint.resume_file=./save/vilbert_finetune/model.pth checkpoint.resume_pretrained=False
