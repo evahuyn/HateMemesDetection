@@ -25,3 +25,43 @@
 2021-11-21T22:43:21 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
 2021-11-21T22:43:21 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 1.5422, test/total_loss: 1.5422, test/hateful_memes/accuracy: 0.7155, test/hateful_memes/binary_f1: 0.5011, test/hateful_memes/roc_auc: 0.7430
 2021-11-21T22:43:21 | mmf.trainers.callbacks.logistics: Finished run in 24s 564ms
+
+## Visual bert + dense
+2021-12-06T12:45:59 | mmf.utils.checkpoint: Checkpoint loaded.
+2021-12-06T12:45:59 | mmf.utils.checkpoint: Current num updates: 3000
+2021-12-06T12:45:59 | mmf.utils.checkpoint: Current iteration: 3000
+2021-12-06T12:45:59 | mmf.utils.checkpoint: Current epoch: 12
+2021-12-06T12:46:00 | mmf.trainers.mmf_trainer: Starting inference on val set
+2021-12-06T12:46:00 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 17/17 [00:15<00:00,  1.12it/s]
+2021-12-06T12:46:15 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 17
+2021-12-06T12:46:15 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-12-06T12:46:15 | mmf.trainers.callbacks.logistics: progress: 3000/11000, val/hateful_memes/cross_entropy: 1.2858, val/total_loss: 1.2858, val/hateful_memes/accuracy: 0.6778, val/hateful_memes/binary_f1: 0.5315, val/hateful_memes/roc_auc: 0.7106
+
+2021-12-06T12:53:55 | mmf.utils.general: Total Parameters: 112044290. Trained Parameters: 112044290
+2021-12-06T12:53:55 | mmf.trainers.mmf_trainer: Starting inference on test set
+2021-12-06T12:53:55 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 63/63 [00:19<00:00,  3.26it/s]
+2021-12-06T12:54:15 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 63
+2021-12-06T12:54:15 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-12-06T12:54:15 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 1.3113, test/total_loss: 1.3113, test/hateful_memes/accuracy: 0.7005, test/hateful_memes/binary_f1: 0.5666, test/hateful_memes/roc_auc: 0.7385
+
+## Visual bert COCO + dense
+2021-12-06T14:08:28 | mmf.utils.checkpoint: Checkpoint loaded.
+2021-12-06T14:08:28 | mmf.utils.checkpoint: Current num updates: 9000
+2021-12-06T14:08:28 | mmf.utils.checkpoint: Current iteration: 9000
+2021-12-06T14:08:28 | mmf.utils.checkpoint: Current epoch: 34
+2021-12-06T14:08:29 | mmf.trainers.mmf_trainer: Starting inference on val set
+2021-12-06T14:08:29 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 17/17 [00:15<00:00,  1.11it/s]
+2021-12-06T14:08:44 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 17
+2021-12-06T14:08:44 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-12-06T14:08:44 | mmf.trainers.callbacks.logistics: progress: 9000/11000, val/hateful_memes/cross_entropy: 2.2311, val/total_loss: 2.2311, val/hateful_memes/accuracy: 0.7019, val/hateful_memes/binary_f1: 0.5171, val/hateful_memes/roc_auc: 0.7074
+
+2021-12-06T14:27:50 | mmf.utils.general: Total Parameters: 112044290. Trained Parameters: 112044290
+2021-12-06T14:27:50 | mmf.trainers.mmf_trainer: Starting inference on test set
+2021-12-06T14:27:50 | mmf.common.test_reporter: Predicting for hateful_memes
+100%|███████████████████████████████████████████████████████████████████████████████████| 63/63 [00:19<00:00,  3.24it/s]
+2021-12-06T14:28:09 | mmf.trainers.core.evaluation_loop: Finished training. Loaded 63
+2021-12-06T14:28:09 | mmf.trainers.core.evaluation_loop:  -- skipped 0 batches.
+2021-12-06T14:28:09 | mmf.trainers.callbacks.logistics: test/hateful_memes/cross_entropy: 2.0565, test/total_loss: 2.0565, test/hateful_memes/accuracy: 0.7275, test/hateful_memes/binary_f1: 0.5668, test/hateful_memes/roc_auc: 0.7553

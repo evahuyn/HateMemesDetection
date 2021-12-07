@@ -67,23 +67,31 @@ def ensemble(models, modelnames):
     # majority vote
     labels["sum"] = labels.sum(axis=1)
     labels_vote = []
+    labels_p = []
     for i in range(0, len(labels)):
         labels_vote.append(1 if labels.iloc[i]['sum'] >(len(modelnames)/2) else 0)
+        labels_p.append(labels.iloc[i]['sum']/len(modelnames))
     labels["majority_vote"] = labels_vote
+    labels["majority_vote_p"] = labels_p
     # print(labels.head())
 
     # probability average
     probs["sum"]=probs.sum(axis=1)
     probs_value = []
+    probs_p = []
     for i in range(0, len(probs)):
         probs_value.append(1 if (probs.iloc[i]['sum']/len(modelnames)) > 0.5 else 0)
+        probs_p.append(probs.iloc[i]['sum']/len(modelnames))
     probs["probs_average"] = probs_value
+    probs["probs_average_p"] = probs_p
     # print(probs.head())
 
     result = pd.DataFrame()
     result['id'] = mmbt_grid['id']
     result['majority_vote'] = labels["majority_vote"]
+    result['majority_vote_p'] = labels["majority_vote_p"]
     result['probs_averag'] = probs["probs_average"]
+    result['probs_averag_p'] = probs["probs_average_p"]
     result.to_csv("result/ensemble_result.csv", index=False)
 
 def process_test_set():
@@ -111,8 +119,10 @@ def evaluation_metrics():
     #     correct_majority.append(1 if row['majority_vote'] == row['labels'] else 0)
     #     correct_probs.append(1 if row['probs_averag']==row['labels'] else 0)
 
-    roc_auc1 = roc_auc_score(df['majority_vote'].tolist(), df['labels'].tolist())
-    roc_auc2 = roc_auc_score(df['probs_averag'].tolist(), df['labels'].tolist())
+    # roc_auc1 = roc_auc_score(df['majority_vote'].tolist(), df['labels'].tolist())
+    # roc_auc2 = roc_auc_score(df['probs_averag'].tolist(), df['labels'].tolist())
+    roc_auc1 = roc_auc_score(df['labels'].tolist(), df['majority_vote_p'].tolist())
+    roc_auc2 = roc_auc_score(df['labels'].tolist(), df['probs_averag_p'].tolist())
 
     accuracy1 = accuracy_score(df['majority_vote'].tolist(), df['labels'].tolist())
     accuracy2 = accuracy_score(df['probs_averag'].tolist(), df['labels'].tolist())
@@ -129,6 +139,6 @@ def evaluation_metrics():
     print(f'Probability average f1: {f1_score2}')
 
 
-ensemble(models_v5, modelname_v5)
+ensemble(models_v3, modelname_v3)
 evaluation_metrics()
 

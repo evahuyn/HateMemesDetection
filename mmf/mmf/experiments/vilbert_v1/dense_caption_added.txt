@@ -1,0 +1,33 @@
+# model vilbert_dense was trained adding dense capptioning
+
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=train_val dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/dense_caption/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dense_caption/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/dense_caption/caption_test_unseen.jsonl" env.save_dir="./save/vilbert_dense"
+
+# test with caption
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/vilbert_dense/vilbert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/dense_caption/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dense_caption/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/dense_caption/caption_test_unseen.jsonl"
+
+mmf_predict config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/vilbert_dense/vilbert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/dense_caption/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dense_caption/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/dense_caption/caption_test_unseen.jsonl"
+
+# default model
+mmf_run config=projects/hateful_memes/configs/vilbert/defaults.yaml model=vilbert dataset=hateful_memes \
+run_type=test checkpoint.resume_file=./save/vilbert_finetune/model.pth checkpoint.resume_pretrained=False
+
+# default pretrained VilBERT COCO
+mmf_run config=experiments/vilbert_v1/experiment_from_cc.yaml model=vilbert_v1 dataset=hateful_memes run_type=val checkpoint.resume_zoo=vilbert.finetuned.hateful_memes.from_cc_original checkpoint.resume_pretrained=False
+
+mmf_predict config=experiments/vilbert_v1/experiment_from_cc.yaml model=vilbert_v1 dataset=hateful_memes run_type=val checkpoint.resume_zoo=vilbert.finetuned.hateful_memes.from_cc_original checkpoint.resume_pretrained=False
+
+# finetuning from pretrained CC + dense
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=train_val checkpoint.resume_file=./save/vilbert.pretrained.cc.original/model.pth checkpoint.resume_pretrained=True dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/dense_caption/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dense_caption/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/dense_caption/caption_test_unseen.jsonl" env.save_dir="./save/vilbert_cc_dense"
+
+# test finetuning model cc + dense
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/vilbert_cc_dense/vilbert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/dense_caption/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dense_caption/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/dense_caption/caption_test_unseen.jsonl"
+
+# predict
+mmf_predict config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/vilbert_cc_dense/vilbert_v1_final.pth checkpoint.resume_pretrained=False dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/dense_caption/caption_train.jsonl" dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dense_caption/caption_dev_unseen.jsonl" dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/dense_caption/caption_test_unseen.jsonl"
+
+# finetuning from pretrained CC without caption
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=train_val checkpoint.resume_file=./save/vilbert.pretrained.cc.original/model.pth checkpoint.resume_pretrained=True env.save_dir="./save/vilbert_cc_without"
+
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/vilbert_cc_without/vilbert_v1_final.pth checkpoint.resume_pretrained=False
+
+mmf_predict config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 dataset=hateful_memes run_type=test checkpoint.resume_file=./save/vilbert_cc_without/vilbert_v1_final.pth checkpoint.resume_pretrained=False
