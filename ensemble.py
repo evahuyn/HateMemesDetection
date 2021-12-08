@@ -20,28 +20,31 @@ vilbert_default_with_caption = pd.read_csv("result/vilbert_default_with_caption.
 finetune_vilbert_without_caption = pd.read_csv("result/fintune_vilbert_without_caption.csv")
 finetune_vilbert_cc_with_caption = pd.read_csv("result/fintune_vilbert_cc_with_caption.csv")
 finetune_vilbert_cc_without_caption = pd.read_csv("result/fintune_vilbert_cc_without_caption.csv")
+finetune_vilbert_dense = pd.read_csv("result/finetune_vilbert_dense.csv")
+finetune_visual_bert_dense = pd.read_csv("result/finetune_visual_bert_dense.csv")
+finetune_vilbert_cc_dense = pd.read_csv("result/finetune_vilbert_cc_dense.csv")
+finetune_visual_bert_coco_dense = pd.read_csv("result/finetune_visual_bert_coco_dense.csv")
 
-models = [mmbt_grid, mmbt_region, finetune_vilbert_without_caption, finetune_vilbert_with_caption, finetune_visual_bert_without_caption, finetune_visual_bert_with_caption]
-modelnames = ["mmbt_grid", "mmbt_region", "vilbert", "vilbert_caption", "visualbert", "visualbert_caption"]
+# unimodal pretraining
+models = [mmbt_grid, mmbt_region, finetune_vilbert_without_caption, finetune_vilbert_with_caption, finetune_visual_bert_without_caption, finetune_visual_bert_with_caption, finetune_vilbert_dense, finetune_visual_bert_dense]
+modelnames = ["mmbt_grid", "mmbt_region", "vilbert", "vilbert_caption", "visualbert", "visualbert_caption", "vilbert_dense", "visualbert_dense"]
 
-models_v2 = [finetune_vilbert_without_caption, finetune_vilbert_cc_without_caption, finetune_visual_bert_without_caption, finetune_visual_bert_coco_without_caption]
-modelname_v2 = ["vilbert", "vilbert_cc", "visualbert", "visualbert_coco"]
+# multimodal pretraining
+models_v2 = [finetune_vilbert_cc_dense, finetune_vilbert_cc_without_caption, finetune_vilbert_cc_with_caption, finetune_visual_bert_coco_dense, finetune_visual_bert_coco_without_caption, finetune_visual_bert_coco_with_caption]
+modelname_v2 = ["vilbert_cc_dense", "vilbert_cc", "vilbert_cc_caption", "visualbert_coco_dense", "visualbert_coco", "visualbert_coco_caption"]
 
-models_v3 = [finetune_vilbert_cc_with_caption, finetune_vilbert_cc_without_caption, finetune_vilbert_with_caption, finetune_vilbert_without_caption,
-finetune_visual_bert_coco_with_caption,finetune_visual_bert_coco_without_caption, finetune_visual_bert_with_caption, finetune_visual_bert_without_caption]
-modelname_v3 = ["vilbert_cc_caption", "vilbert_cc", "vilbert_caption", "vilbert", "visual_bert_coco_caption", "visual_bert_coco", "visual_bert_caption", "visual_bert"]
+# excluding MMBT
+models_v3 = [finetune_vilbert_without_caption, finetune_vilbert_with_caption, finetune_visual_bert_without_caption, finetune_visual_bert_with_caption, finetune_vilbert_dense, finetune_visual_bert_dense, finetune_vilbert_cc_dense, finetune_vilbert_cc_without_caption, finetune_vilbert_cc_with_caption, finetune_visual_bert_coco_dense, finetune_visual_bert_coco_without_caption, finetune_visual_bert_coco_with_caption]
+modelname_v3 = ["vilbert", "vilbert_caption", "visualbert", "visualbert_caption", "vilbert_dense", "visualbert_dense", "vilbert_cc_dense", "vilbert_cc", "vilbert_cc_caption", "visualbert_coco_dense", "visualbert_coco", "visualbert_coco_caption"]
 
-models_v4 = [finetune_vilbert_cc_with_caption, finetune_vilbert_with_caption,
-finetune_visual_bert_coco_with_caption, finetune_visual_bert_with_caption]
-modelname_v4 = ["vilbert_cc_caption", "vilbert_caption", "visual_bert_coco_caption", "visual_bert_caption", ]
+# Caption + denseCap
+models_v4 = [finetune_vilbert_cc_with_caption, finetune_vilbert_with_caption, finetune_vilbert_dense, finetune_vilbert_cc_dense,
+finetune_visual_bert_coco_with_caption, finetune_visual_bert_with_caption, finetune_visual_bert_dense, finetune_visual_bert_coco_dense]
+modelname_v4 = ["vilbert_cc_caption", "vilbert_caption", "vilbert_dense", "vilbert_cc_dense", "visual_bert_coco_caption", "visual_bert_caption", "visual_bert_dense", "visual_bert_coco_dense"]
 
-models_v5 = [finetune_vilbert_cc_with_caption, finetune_vilbert_cc_without_caption,
-finetune_visual_bert_coco_with_caption,finetune_visual_bert_coco_without_caption]
-modelname_v5 = ["vilbert_cc_caption", "vilbert_cc", "visual_bert_coco_caption", "visual_bert_coco"]
-
-models_v6 = [mmbt_grid, mmbt_region, finetune_vilbert_cc_with_caption, finetune_vilbert_cc_without_caption, finetune_vilbert_with_caption, finetune_vilbert_without_caption,
-finetune_visual_bert_coco_with_caption,finetune_visual_bert_coco_without_caption, finetune_visual_bert_with_caption, finetune_visual_bert_without_caption]
-modelname_v6 = ["mmbt_grid", "mmbt_region","vilbert_cc_caption", "vilbert_cc", "vilbert_caption", "vilbert", "visual_bert_coco_caption", "visual_bert_coco", "visual_bert_caption", "visual_bert"]
+# all
+models_v5 = [mmbt_grid, mmbt_region, finetune_vilbert_without_caption, finetune_vilbert_with_caption, finetune_visual_bert_without_caption, finetune_visual_bert_with_caption, finetune_vilbert_dense, finetune_visual_bert_dense, finetune_vilbert_cc_dense, finetune_vilbert_cc_without_caption, finetune_vilbert_cc_with_caption, finetune_visual_bert_coco_dense, finetune_visual_bert_coco_without_caption, finetune_visual_bert_coco_with_caption]
+modelname_v5 = ["mmbt_grid", "mmbt_region", "vilbert", "vilbert_caption", "visualbert", "visualbert_caption", "vilbert_dense", "visualbert_dense", "vilbert_cc_dense", "vilbert_cc", "vilbert_cc_caption", "visualbert_coco_dense", "visualbert_coco", "visualbert_coco_caption"]
 
 models_v7 = [mmbt_grid, mmbt_region, finetune_vilbert_cc_with_caption, finetune_vilbert_with_caption,
 finetune_visual_bert_coco_with_caption, finetune_visual_bert_with_caption]

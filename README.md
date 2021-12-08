@@ -39,18 +39,19 @@ Use MMF to train an existing baselines. You can adjust the batch size, maximum n
 
 
 #### Train the model
-```commandline
-mmf_run config=projects/hateful_memes/configs/mmbt/defaults.yaml \
-  model=mmbt \
-  dataset=hateful_memes \
-  training.log_interval=50 \
-  training.max_updates=3000 \
-  training.batch_size=16 \
-  training.evaluation_interval=500
+
+The modified models are under mmf/mmf/experiments folder. The command line options are under note.txt and the training result log stores in result.txt in each sub folder.
 ```
-- Baseline Models Results in the paper:
-![img_2.png](img_2.png)
-Note: The detailed Baseline Model Result reproduced by me is in Baseline.md file.
+# example run command
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 /
+dataset=hateful_memes run_type=train_val /
+dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" /
+dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" /
+dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl" /
+env.save_dir="./save/vilbert_v1"
+```
+- Model Results:
+![img_4.png](img_4.png).
 
 - Hyperparameters in the original paper:
 ![img_3.png](img_3.png)
@@ -82,4 +83,10 @@ Check this [repo](https://github.com/evahuyn/ImageCaptioning)
 ### Combine Image Caption with the text input
 
 The image caption and text caption is concatenate as the textual inputs. 
+
+## Generate Dense Image Captions
+
+I applied the [DenseCap](https://cs.stanford.edu/people/karpathy/densecap/) model to generate dense image captions for the memes. 
+
+Please run this pytorch implementation of DenseCap in this [repo](https://github.com/evahuyn/densecap-pytorch). 
 
