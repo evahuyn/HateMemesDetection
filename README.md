@@ -20,7 +20,7 @@ exists = exists or PathManager.exists(os.path.join(folder, "data", file)) to exi
 ```
 mmf_convert_hm --zip_file=x --password=y --bypass_checksum=1
 ```
-This can take A WHILE
+This may take sometime.
 
 The zip file will be converted into correct format and lives in .cache/torch/mmf/data/datasets/hateful_memes/defaults
 
@@ -36,11 +36,17 @@ To replace the annotation with needed one, add flags
 
 Use MMF to train an existing baselines. You can adjust the batch size, maximum number of updates, log and evaluation interval as well as other things. Read more about [MMF's configuration system](https://mmf.sh/docs/notes/configuration/).
 
-
+Note: until this part was the code for midterm.
 
 #### Train the model
 
-The modified models are under mmf/mmf/experiments folder. The command line options are under note.txt and the training result log stores in result.txt in each sub folder.
+The modified models are under mmf/mmf/experiments folder. 
+
+```commandline
+cd mmf
+```
+
+In mmf/mmf/experiments you'll see vilbert_v1 and visual_bert_v1. The command is stored in note.txt and dense_caption_added.txt. Copy the command in the files to command line to run the model. The training results store in result.txt in each sub folder.
 ```
 # example run command
 mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 /
@@ -51,10 +57,7 @@ dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotat
 env.save_dir="./save/vilbert_v1"
 ```
 - Model Results:
-![img_4.png](img_4.png).
-
-- Hyperparameters in the original paper:
-![img_3.png](img_3.png)
+![img_4.png](img_4.png)
 
 
 ## Ensemble Learning
@@ -80,6 +83,8 @@ Full text of the original [paper](http://arxiv.org/abs/1609.06647)
 
 Check this [repo](https://github.com/evahuyn/ImageCaptioning)
 
+Please use the ImageCaptioning zip.
+
 ### Combine Image Caption with the text input
 
 The image caption and text caption is concatenate as the textual inputs. 
@@ -89,4 +94,6 @@ The image caption and text caption is concatenate as the textual inputs.
 I applied the [DenseCap](https://cs.stanford.edu/people/karpathy/densecap/) model to generate dense image captions for the memes. 
 
 Please run this pytorch implementation of DenseCap in this [repo](https://github.com/evahuyn/densecap-pytorch). 
+
+Please use the densecap-pytorch zip. 
 
