@@ -24,49 +24,11 @@ This may take sometime.
 
 The zip file will be converted into correct format and lives in .cache/torch/mmf/data/datasets/hateful_memes/defaults
 
-To replace the annotation with needed one, add flags 
-
-```commandline
-  dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/train.jsonl" \
-  dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/dev_unseen.jsonl" \
-  dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/test_unseen.jsonl"
-```
-
 ### Reproducing Baselines:
 
 Use MMF to train an existing baselines. You can adjust the batch size, maximum number of updates, log and evaluation interval as well as other things. Read more about [MMF's configuration system](https://mmf.sh/docs/notes/configuration/).
 
 Note: until this part was the code for midterm.
-
-#### Train the model
-
-The modified models are under mmf/mmf/experiments folder. 
-
-```commandline
-cd mmf
-```
-
-In mmf/mmf/experiments you'll see vilbert_v1 and visual_bert_v1. The command is stored in note.txt and dense_caption_added.txt. Copy the command in the files to command line to run the model. The training results store in result.txt in each sub folder.
-```
-# example run command
-mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 /
-dataset=hateful_memes run_type=train_val /
-dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" /
-dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" /
-dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl" /
-env.save_dir="./save/vilbert_v1"
-```
-- Model Results:
-![img_4.png](img_4.png)
-
-
-## Ensemble Learning
-
-I applied ensemble learning with Majority Vote and Mean Probability. The code is in ensemble.py file. Run the following to get the ensemble learning result.
-
-```commandline
-python ensemble.py
-```
 
 ## Generate Image Captioning for the Memes
 
@@ -96,4 +58,45 @@ I applied the [DenseCap](https://cs.stanford.edu/people/karpathy/densecap/) mode
 Please run this pytorch implementation of DenseCap in this [repo](https://github.com/evahuyn/densecap-pytorch). 
 
 Please use the densecap-pytorch zip. 
+
+## Train the model
+
+The modified models are under mmf/mmf/experiments folder. 
+
+```commandline
+cd mmf
+```
+Generated captions are stored in Im2txt/im2txt/data/hateful_memes/annotations
+
+Replace the annotation with needed one, add flags 
+
+```commandline
+dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" \
+dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" \
+dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl"
+```
+
+In mmf/mmf/experiments you'll see vilbert_v1 and visual_bert_v1. The command is stored in note.txt and dense_caption_added.txt. Copy the command in the files to command line to run the model. The training results store in result.txt in each sub folder.
+```
+# example run command
+mmf_run config=experiments/vilbert_v1/experiment_defaults.yaml model=vilbert_v1 /
+dataset=hateful_memes run_type=train_val /
+dataset_config.hateful_memes.annotations.train[0]="hateful_memes/defaults/annotations/caption_added/caption_train.jsonl" /
+dataset_config.hateful_memes.annotations.val[0]="hateful_memes/defaults/annotations/caption_added/caption_dev_unseen.jsonl" /
+dataset_config.hateful_memes.annotations.test[0]="hateful_memes/defaults/annotations/caption_added/caption_test_unseen.jsonl" /
+env.save_dir="./save/vilbert_v1"
+```
+- Model Results:
+![img_4.png](img_4.png)
+
+
+## Ensemble Learning
+
+I applied ensemble learning with Majority Vote and Mean Probability. The code is in ensemble.py file. Run the following to get the ensemble learning result.
+
+```commandline
+python ensemble.py
+```
+
+
 
